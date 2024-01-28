@@ -6,9 +6,11 @@ let int1 = 10;
 let int2 = 5;
 
 if (int1 > int2) {
-  console.log("Il numero più grande è:", int1);
+  console.log("Il primo numero è più grande:", int1);
 } else if (int2 > int1) {
-  console.log("il numero più grande è:", int2);
+  console.log("il secondo numero è più grande:", int2);
+} else {
+  console.log("I numeri sono uguali");
 }
 
 /* ESERCIZIO 2
@@ -23,10 +25,12 @@ if (int1 !== 5) {
   Scrivi un algoritmo che mostri "divisibile per 5" in console se un numero fornito è perfettamente divisibile per 5 (suggerimento: usa l'operatore modulo)
 */
 
-let ex3 = 10;
+let ex3 = 11;
 
 if (ex3 % 5 === 0) {
   console.log(ex3, "è divisibile per 5");
+} else {
+  console.log("non divisibile per 5");
 }
 
 /* ESERCIZIO 4
@@ -49,29 +53,28 @@ if (num1 === 8 || num2 === 8) {
   Crea un algoritmo che determini l'ammontare totale che deve essere addebitato all'utente per il checkout.
 */
 
-let totalShoppingCart = 50;
-let discount = 20;
-let spedizione = 10;
-
-discount = (totalShoppingCart / 100) * 20;
-console.log("sconto Black Friday 20%", discount);
-
-totalShoppingCart = totalShoppingCart - discount;
+let totalShoppingCart = 30;
 
 if (totalShoppingCart >= 50) {
   console.log("Hai diritto alla spedizione gratuita");
 } else if (totalShoppingCart < 50) {
-  console.log("La spedizione ha un costo di 10 euro");
+  console.log("La spedizione ha un costo di 10 euro ed il totale è:", totalShoppingCart + 10);
 }
-
-console.log("Il totale è:", totalShoppingCart - discount);
 
 /* ESERCIZIO 6
   Stai lavorando su un sito di e-commerce. Oggi è il Black Friday e viene applicato il 20% su ogni prodotto.
   Modifica la risposta precedente includendo questa nuova promozione nell'algoritmo, determinando come prima se le spedizioni sono gratuite oppure no e e calcolando il totale.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+let totalShoppingCart2 = 30;
+totalShoppingCart2 = totalShoppingCart2 * 0.8;
+let spedizione = 10;
+let tot = totalShoppingCart2;
+
+if (totalShoppingCart2 < 50) {
+  tot += spedizione;
+}
+console.log("Totale:", tot);
 
 /* ESERCIZIO 7
   Crea tre variabili, e assegna un valore numerico a ciascuna di esse.
@@ -79,31 +82,52 @@ console.log("Il totale è:", totalShoppingCart - discount);
   Alla fine mostra il risultato in console.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+let var1 = 2;
+let var2 = 4;
+let var3 = 3;
+
+if (var1 > var2) {
+  if (var1 > var3) {
+    if (var2 > var3) {
+      console.log("L'ordine dei numeri è il seguente: " + var3 + " " + var2 + " " + var1);
+    }
+  }
+}
 
 /* ESERCIZIO 8
   Crea un algoritmo per verificare che un valore fornito sia un numero oppure no (suggerimento: cerca su un motore di ricerca "typeof").
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+let test = "Ciao";
+
+if (typeof test === "number") {
+  console.log("è un numero!");
+} else {
+  console.log("non è un numero!");
+}
 
 /* ESERCIZIO 9
   Crea un algoritmo per controllare se un numero fornito sia pari o dispari (suggerimento: cerca l'operatore modulo su un motore di ricerca)
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+let test2 = 25;
+
+if (test2 % 2 === 0) {
+  console.log("è un numero pari!");
+} else {
+  console.log("è un numero dispari!");
+}
 
 /* ESERCIZIO 10
-  Modifica la logica del seguente algoritmo in modo che mostri in console il messaggio corretto in ogni circostanza.
-  let val = 7
-  if (val < 10) {
-      console.log("Meno di 10");
-    } else if (val < 5) {
-      console.log("Meno di 5");
-    } else {
-      console.log("Uguale a 10 o maggiore");
-    }
-*/
+  Modifica la logica del seguente algoritmo in modo che mostri in console il messaggio corretto in ogni circostanza. */
+let val = 7;
+if (val < 10) {
+  console.log("Meno di 10");
+} else if (val < 5) {
+  console.log("Meno di 5");
+} else {
+  console.log("Uguale a 10 o maggiore");
+}
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -117,28 +141,45 @@ const me = {
   skills: ["javascript", "html", "css"],
 };
 
+me.city = "Toronto";
+console.log(me);
+
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 12
-  Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere la proprietà "lastName".
-*/
+  Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere la proprietà "lastName".*/
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+delete me.lastName;
+console.log(me);
 
 /* ESERCIZIO 13
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere l'ultimo elemento della proprietà "skills".
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+me.skills.pop();
+console.log(me);
 
 /* ESERCIZIO 14
   Scrivi del codice per creare un array inizialmente vuoto. Riempilo successivamente con i numeri da 1 a 10.
 */
+let arr = [];
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+arr.push(1);
+arr.push(2);
+arr.push(3);
+arr.push(4);
+arr.push(5);
+arr.push(6);
+arr.push(7);
+arr.push(8);
+arr.push(9);
+arr.push(10);
+console.log(arr);
 
 /* ESERCIZIO 15
   Scrivi del codice per sostituire l'ultimo elemento dell'array, ovvero il valore 10, con il valore 100.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+arr.pop();
+arr.push(100);
+console.log(arr);
